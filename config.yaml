@@ -1,0 +1,19 @@
+listen-address: :8081
+ssm-prefix: prefix-test-
+aws-region-id: us-east-1
+aws-account-id: 123456789101
+tenants:
+  - tenant: tenant_x
+    db-name: some_db_x
+  - tenant: tenant_other_y
+    db-name: some_other_db_y
+metrics:
+  - name: Count some_table
+    query: "SELECT COUNT(*) AS count FROM some_table"
+    query-value-columns:
+      - count
+    query-interval: 1m
+    include-dbs:
+      - "some_db_*"
+    exclude-dbs:
+      - "some_other_db_*"
