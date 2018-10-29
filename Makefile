@@ -1,6 +1,6 @@
 DOCKERREPO = movio
 ARTIFACT = go-app
-IMAGE = prometheus-mysql-exporter
+IMAGE = prometheus-athena-exporter
 OS = $(shell uname | tr [:upper:] [:lower:])
 
 all: build
